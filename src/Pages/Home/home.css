@@ -1,0 +1,19 @@
+.navLogo{
+    background: rgb(2,0,36);
+    background: linear-gradient(23deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 45%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.button{
+    background: rgb(2,0,36);
+    background: linear-gradient(130deg, rgba(0,212,255,1) 10%, rgba(9,9,121,1) 45%, rgba(0,212,255,1) 100%);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.text{
+    background: rgb(2,0,36);
+    background: linear-gradient(23deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 45%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

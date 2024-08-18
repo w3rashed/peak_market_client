@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import "./home.css";
-import logo from "../../../public/logo.jpg";
+
 import { AuthContext } from "../../Context/Authentication/Authentication";
 import toast from "react-hot-toast";
 import Footer from "../../components/Footer";
@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div>
       {user && (
-        <div className="navbar bg-base-100 container mx-auto">
+        <div className="navbar bg-slate-600 container mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -52,15 +52,10 @@ const Home = () => {
             <a className="btn btn-ghost text-3xl navLogo font-bold">
             Peak-Market
             </a>
+            {/* <img src="logo.png" alt="" className="w-20" /> */}
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-              <li>
-                <NavLink to="/products" className="text-lg">
-                  Product
-                </NavLink>
-              </li>
-            </ul>
+            
           </div>
           <div className="navbar-end">
             <a

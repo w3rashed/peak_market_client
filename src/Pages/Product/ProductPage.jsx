@@ -2,6 +2,9 @@ import axios from "axios";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import "./product.css";
+import { MdOutlineComputer } from "react-icons/md";
+import { GiAmpleDress, GiWoodenChair } from "react-icons/gi";
+import { FaShoePrints, FaTools } from "react-icons/fa";
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({
@@ -47,9 +50,81 @@ const ProductPage = () => {
   return (
     <>
       <div className="container mx-auto px-3">
-        
+        <div>
+          <div className="text-center mt-10">
+            <h2 className="text-4xl font-bold">Featured Product Categories</h2>
+            <p>Explore Our Top Categories.</p>
+          </div>
+          <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-6">
+            {/* card-1 */}
+            <div className="card bg-base-100  shadow-xl mt-10">
+              <div className="grid justify-center   p-10 ">
+                <div className="flex flex-col justify-center items-center">
+                <MdOutlineComputer className="text-[60px] "></MdOutlineComputer>
+                  <h2 className="  font-bold text-2xl">Electronics</h2>
+                  <p>95 Products</p>
+                </div>
+              </div>
+            </div>
+            {/* card-2 */}
+            <div className="card bg-base-100  shadow-xl mt-10">
+              <div className="grid justify-center   p-10 ">
+                <div className="flex flex-col justify-center items-center">
+                <GiAmpleDress className="text-[60px] "></GiAmpleDress>
+                  <h2 className="  font-bold text-2xl">Clothing</h2>
+                  <p>123 Products</p>
+                </div>
+              </div>
+            </div>
+            {/* card-3 */}
+            <div className="card bg-base-100  shadow-xl mt-10">
+              <div className="grid justify-center   p-10 ">
+                <div className="flex flex-col justify-center items-center">
+                <FaTools className="text-[60px] "></FaTools>
+                  <h2 className="  font-bold text-2xl">Accessories</h2>
+                  <p>500 Products</p>
+                </div>
+              </div>
+            </div>
+            {/* card-4 */}
+            <div className="card bg-base-100  shadow-xl mt-10">
+              <div className="grid justify-center   p-10 ">
+                <div className="flex flex-col justify-center items-center">
+                <FaShoePrints className="text-[60px] "></FaShoePrints>
+                  <h2 className="  font-bold text-2xl">Footwear</h2>
+                  <p>130 Products</p>
+                </div>
+              </div>
+            </div>
+            {/* card-5 */}
+            <div className="card bg-base-100  shadow-xl mt-10">
+              <div className="grid justify-center   p-10 ">
+                <div className="flex flex-col justify-center items-center">
+                <GiWoodenChair className="text-[60px] "></GiWoodenChair>
+                  <h2 className="  font-bold text-2xl">Furniture</h2>
+                  <p>40 Products</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div className="text-center mt-10">
+          <h2 className="text-4xl font-bold">Our Products</h2>
+          <p>Explore our top picks, curated just for you.</p>
+        </div>
+        <div className="flex mt-10 justify-center">
+          <input
+            className="px-8 py-3 bg-slate-200 rounded-full"
+            type="text"
+            name="search"
+            placeholder="Search products..."
+            value={filters.search}
+            onChange={handleFilterChange}
+          />
+        </div>
 
-        <div className="filter-controls lg:flex grid grid-cols-2  gap-5 justify-center mt-24 filterbg p-10 bg-transparent space-x-5">
+        <div className="filter-controls lg:flex grid grid-cols-2  gap-5 justify-center  p-10 bg-transparent space-x-5">
           <select
             name="category"
             className="px-5 py-3 bg-slate-200 rounded-xl "
@@ -109,38 +184,29 @@ const ProductPage = () => {
             <option value="oldest">Oldest</option>
           </select>
         </div>
-        <div className="flex mt-10 justify-center">
-          <input
-            className="px-8 py-3 bg-slate-200 rounded-full"
-            type="text"
-            name="search"
-            placeholder="Search products..."
-            value={filters.search}
-            onChange={handleFilterChange}
-          />
-        </div>
       </div>
-      <div className="container mx-auto gap-5 mt-16 px-3">
+      <div className="container mx-auto gap-5  px-3">
         <div className="">
           <div className="product-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {products?.map((product) => (
-              <div
-                key={product._id}
-                className="h-[420px] card p-5 space-y-3"
-              >
+              <div key={product._id} className="h-[420px]  p-5 space-y-3">
                 <img
                   className="h-40 w-full items-center rounded-md"
                   src={product.productimage}
                   alt=""
                 />
-                <h3 className="font-bold text-xl ">Name: {product.productname}</h3>
+                <h3 className="font-bold text-xl ">
+                  Name: {product.productName}
+                </h3>
+                <h4>Brand:{product.brand}</h4>
                 <p>
                   Category: {product.category} - {product.brandname}
                 </p>
                 <p>Price: ${product.price}</p>
                 <p>Rating: {product.ratings}</p>
                 <p>
-                  Added Date: {moment(product.productcreationdatetime).format("YYYY-MM-DD")}
+                  Added Date:{" "}
+                  {moment(product.productcreationdatetime).format("YYYY-MM-DD")}
                 </p>
               </div>
             ))}

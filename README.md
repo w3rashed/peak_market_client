@@ -1,8 +1,27 @@
-# React + Vite
+## [Peak Market](https://peak-market.web.app)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features and Characteristics
 
-Currently, two official plugins are available:
+## Technology Stack
+- **Frontend:**
+  - React.js for dynamic user interfaces.
+  - Daisy-UI  for design components.
+  - React Router for navigation.
+  - 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Backend:**
+  - Node.js with Express.js for server-side logic.
+  - MongoDB  for database management.
+  - Authentication and authorization (JWT).
+
+## Getting Started
+- Clone the repository.
+- Install dependencies.
+- Configure environment variables.
+- Run the application.
+
+
+
+# GitHub Private repo links
+- [Client repo](https://github.com/w3rashed/peak_market_client.git)
+- [server repo](https://github.com/w3rashed/peak_market_server.git)

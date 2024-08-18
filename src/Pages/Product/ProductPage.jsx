@@ -212,11 +212,11 @@ const ProductPage = () => {
             ))}
           </div>
 
-          <div className="flex justify-center mt-10">
+          <div className="flex justify-center my-10">
             <div className="pagination">
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
-                  className="btn bg-blue-600 text-white font-bold p-5 m-2"
+                  className="btn b text-white font-bold p-5 m-2"
                   key={index}
                   disabled={filters.page === index + 1}
                   onClick={() => handlePageChange(index + 1)}
